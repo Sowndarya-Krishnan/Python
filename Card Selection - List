@@ -1,0 +1,7 @@
+import random
+
+friends = ["Alice", "Bob", "Charlie", "David", "Emanuel"]
+card = random.randint(0,4)
+print(friends[card])
+# documentation
+print(random.choice(friends))
