@@ -1,0 +1,28 @@
+def calculate_love_score(name1,name2):
+    
+    couple = (name1 + " " + name2).lower()
+    total_1 = couple.count("t") + couple.count("r") + couple.count("u")+ couple.count("e")
+    total_2 = couple.count("l") + couple.count("o") + couple.count("v")+ couple.count("e")
+    print(f"{total_1}{total_2}")
+   
+calculate_love_score("Angela Yu","Jack Bauer")
+
+#Using for loop:
+    # for char in couple:
+    #     if char == "T":
+    #         total_1 += 1
+    #     if char == "R":
+    #         total_1 += 1
+    #     if char == "U":
+    #         total_1 += 1
+    #     if char == "E":
+    #         total_1 += 1
+    # for char in couple:
+    #     if char == "L":
+    #         total_2 += 1
+    #     if char == "0":
+    #         total_2 += 1
+    #     if char == "V":
+    #         total_2 += 1
+    #     if char == "E":
+    #         total_2 += 1
