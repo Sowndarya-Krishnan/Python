@@ -1,0 +1,21 @@
+student_scores = {
+    'Harry': 88,
+    'Ron': 78,
+    'Hermione': 95,
+    'Draco': 75,
+    'Neville': 60
+}
+
+student_grades ={}
+
+for score in student_scores:
+    mark = student_scores[score]
+    if 91 <= mark <= 100:
+        student_grades[score] = "Outstanding"
+    if 81 <= mark <= 90:
+        student_grades[score] = "Exceeds Expectations"
+    if 71 <= mark <= 80:
+        student_grades[score] = "Acceptable"
+    if mark <= 70:
+        student_grades[score] = "Fail"
+print(student_grades)
