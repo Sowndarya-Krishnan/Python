@@ -1,0 +1,70 @@
+import art
+print(art.logo)
+def add(n1, n2):
+    return n1 + n2
+def sub(n1,n2):
+    return n1 - n2
+def multiply(n1,n2):
+    return n1 * n2
+def div(n1,n2):
+    return n1 / n2
+# ************************** Using Dictionary and function *************************
+operation = {
+    "+": add,
+    "-": sub,
+    "*": multiply,
+    "/": div,
+}
+def calculator():
+    should_accumulate = True
+    n1 = float(input("What's the first number? "))
+    while should_accumulate:
+        for sym in operation:
+            print(sym)
+        op_sym = input("Choose the operation: ")
+        n2 = float(input("What's the next number? "))
+        print(f"{n1} {op_sym} {n2} = {operation[op_sym](n1, n2)}")
+        choice = input(
+            f"Type 'y' to continue calculating with {operation[op_sym](n1, n2)}, or type 'n' to start new calculation.").lower()
+        if choice == 'y':
+            n1 = operation[op_sym](n1, n2)
+        else:
+            should_accumulate = False
+            print("\n" * 10)
+            calculator()
+
+calculator()
+
+# ************************************ using if ***********************************
+# should_continue_1 = True
+# while should_continue_1:
+#     n1 = int(input("What's the first number? "))
+#     should_continue_2 = True
+#     while should_continue_2:
+#         print("+\n-\n*\n/")
+#         operation = input("Choose the operation: ")
+#         n2 = int(input("What's the next number? "))
+#         if operation == "+":
+#             calc = add
+#             result = calc(n1, n2)
+#             print(f"{n1} {operation} {n2} = {result}")
+#             n1 = calc(n1, n2)
+#         if operation == "-":
+#             calc = sub
+#             result = calc(n1, n2)
+#             print(f"{n1} {operation} {n2} = {result}")
+#             n1 = calc(n1, n2)
+#         if operation == "*":
+#             calc = multiply
+#             result = calc(n1, n2)
+#             print(f"{n1} {operation} {n2} = {result}")
+#             n1 = calc(n1, n2)
+#         if operation == "/":
+#             calc = div
+#             result = calc(n1, n2)
+#             print(f"{n1} {operation} {n2} = {result}")
+#             n1 = calc(n1, n2)
+#         Continue = input(f"Type 'y' to continue calculating with {result}, or type 'n' to start new calculation.")
+#         if Continue == "n":
+#             print("\n" * 10)
+#             should_continue_2 = False
