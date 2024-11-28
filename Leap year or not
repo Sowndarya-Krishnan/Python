@@ -1,3 +1,4 @@
+#******************************************** Hacker Rank**********************************************************
 def is_leap(year):
     leap = False
     if year % 4 == 0:
@@ -11,3 +12,14 @@ def is_leap(year):
     return leap
 
 year = int(input())
+#********************************************Ecercise 10************************************************
+def is_leap_year(year):
+    # Write your code here. 
+    # Don't change the function name.
+    leap = True
+    if year % 4 == 0 and year % 100 == 0 and year % 400 == 0:
+        leap
+    else:
+        leap = False
+    return leap
+print(is_leap_year(2000))
