@@ -1,0 +1,55 @@
+import random
+EASY = 10
+HARD = 5
+def easy(num):
+    attempt = EASY
+    while attempt != 0:
+        print(f"You have {attempt} attempts remaining to guess the number.")
+        guess = int(input("Make a Guess:"))
+        if guess > num:
+            attempt -= 1
+            print("Too High.\nGuess again.")
+        if guess < num:
+            attempt -= 1
+            print("Too Low.\nGuess again.")
+        else:
+            print(f"You Got it! The answer is {num}")
+            return "You Win"
+    return "You're out of attempt, You Lose."
+def hard(num):
+    attempt = HARD
+    while attempt != 0:
+        print(f"You have {attempt} attempts remaining to guess the number.")
+        guess = int(input("Make a Guess:"))
+        if guess > num:
+            attempt -= 1
+            print("Too High.\nGuess again.")
+        if guess < num:
+            attempt -= 1
+            print("Too Low.\nGuess again.")
+        else:
+            print(f"You Got it! The answer is {num}")
+            return "You Win"
+    return "You're out of attempt, You Lose."
+
+def set_difficulty():
+    difficulty = input("Choose a difficulty. Type 'easy' or 'hard': ").lower()
+    if difficulty == "easy":
+        print(easy(num=number_to_guess))
+    elif difficulty == "hard":
+        print(hard(num=number_to_guess))
+    else:
+        print("Invalid Input")
+
+
+print(r'''  _______  __    __   _______     _______.     _______.   .___________. __    __   _______    .__   __.  __    __  .___  ___. .______    _______ .______      
+ /  _____||  |  |  | |   ____|   /       |    /       |   |           ||  |  |  | |   ____|   |  \ |  | |  |  |  | |   \/   | |   _  \  |   ____||   _  \     
+|  |  __  |  |  |  | |  |__     |   (----`   |   (----`   `---|  |----`|  |__|  | |  |__      |   \|  | |  |  |  | |  \  /  | |  |_)  | |  |__   |  |_)  |    
+|  | |_ | |  |  |  | |   __|     \   \        \   \           |  |     |   __   | |   __|     |  . `  | |  |  |  | |  |\/|  | |   _  <  |   __|  |      /     
+|  |__| | |  `--'  | |  |____.----)   |   .----)   |          |  |     |  |  |  | |  |____    |  |\   | |  `--'  | |  |  |  | |  |_)  | |  |____ |  |\  \----.
+ \______|  \______/  |_______|_______/    |_______/           |__|     |__|  |__| |_______|   |__| \__|  \______/  |__|  |__| |______/  |_______|| _| `._____|
+                                                                                                                                                              ''')
+print("Welcome to the Number Guessing Game!")
+print("I\'m thinking of a number between 1 and 100.")
+number_to_guess = random.randint(1,100)
+set_difficulty()
