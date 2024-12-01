@@ -1,0 +1,46 @@
+import random
+import art
+import game_data
+
+print(art.logo)
+chosen_key_A = random.choice(list(game_data.data.keys()))
+print(chosen_key_A)
+
+
+
+
+# a = {
+#     "Rajini": 100, "Kamal": 90, "Sivaji": 200, "Prabu": 70, "vijay": 95, "Nayanthara": 150,
+#     "Kajal": 99, "Hansika": 160, "Ajith": 190, "Vijay_Seathupathi": 195,
+# }
+# b = {
+#     "Leo": 201, "Vikram": 151, "Raguthatha": 250, "Lubber_Bandhu": 160, "Begger": 50,
+#     "VTV": 102, "Singam": 60, "Jai_Beem": 110, "GOAT": 10, "Kanguva": 5,
+# }
+# print(art.logo)
+# game_over = False
+# score = 0
+# while not game_over:
+#     chosen_a = random.choice(list(a.keys()))
+#     chosen_b = random.choice(list(b.keys()))
+#     print(f"Compare A: {chosen_a}")
+#     print(art.vs)
+#     print(f"Against B: {chosen_b}")
+#     guess = input("Who has more Followers? Type 'A' or 'B': ").lower()
+#     value_a = a[chosen_a]
+#     value_b = b[chosen_b]
+#     if guess == 'a':
+#         if value_a > value_b:
+#             score += 1
+#             print(score)
+#             print(f"You're Right!, Current Score: {score}")
+#         else:
+#             print(f"Sorry You Lose, Final Score: {score}")
+#             game_over = True
+#     else:
+#         if value_b > value_a:
+#             score += 1
+#             print(f"You're Right!, Current Score: {score}")
+#         else:
+#             print(f"Sorry You Lose, Final Score: {score}")
+#             game_over = True
