@@ -1,0 +1,48 @@
+import random
+import art
+from game_data import data
+
+print(art.logo)
+
+def compare(chosen_a,chosen_b):
+    try:
+        del chosen_a["follower_count"]
+    except KeyError:
+        pass
+    try:
+        del chosen_b["follower_count"]
+    except KeyError:
+        pass
+    value_list_a = []
+    value_list_b = []
+    for key in chosen_a:
+        value_list_a.append(chosen_a[key])
+    for key in chosen_b:
+        value_list_b.append(chosen_b[key])
+    print(f"Compare A: {', '.join(value_list_a)}")
+    print(art.vs)
+    print(f"Against B: {', '.join(value_list_b)}")
+
+chosen_dict_a = random.choice(data)
+chosen_dict_b = random.choice(data)
+a = chosen_dict_a["follower_count"]
+b = chosen_dict_b["follower_count"]
+game_over = False
+score = 0
+while not game_over:
+    compare(chosen_dict_a,chosen_dict_b)
+    win = input("Who has more followers? Type 'A' or 'B': ").lower()
+    if win == "a":
+        if  a > b:
+            score += 1
+            print(f"You're Right!, Current Score: {score}")
+        else:
+            print(f"Sorry You Lose, Final Score: {score}")
+            game_over = True
+    if win == "b":
+        if  a < b:
+            score += 1
+            print(f"You're Right!, Current Score: {score}")
+        else:
+            print(f"Sorry You Lose, Final Score: {score}")
+            game_over = True
